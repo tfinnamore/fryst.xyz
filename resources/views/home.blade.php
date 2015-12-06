@@ -1,12 +1,13 @@
 <html>
 	<head>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrapc.css">
-	<title>My Awesome Page</title>	
+	<title>My Awesome Page</title>
 
 	</head>
 
 	<body class="text-center">
 		<h1>Welcome to my Awesome website!!</h1>
+		<h3>wewt!</h3>
 		<p />
 
 		<div class="container">
@@ -27,7 +28,7 @@
 		<p>
 			Spare ribs sausage frankfurter ball tip bacon cow. Landjaeger pancetta jerky turducken. Jerky brisket bacon frankfurter, pork chop tri-tip salami kielbasa. Kevin doner alcatra meatloaf. Pork belly boudin t-bone cow pork chop ham tail corned beef pork drumstick short ribs shankle. Biltong pork belly cupim, ham kevin pastrami corned beef brisket tail pork loin kielbasa picanha tri-tip 	spare ribs beef ribs.
 		</p>
-		
+
 		<p>
 			Flank ball tip pork chop frankfurter swine, chicken fatback venison meatloaf bresaola shoulder cupim ham tongue leberkas. Rump sausage short loin, pancetta t-bone venison brisket prosciutto corned beef picanha pork loin ribeye. Filet mignon doner ground round picanha t-bone fatback venison bresaola meatloaf tri-tip chicken kielbasa hamburger. Jowl kevin spare ribs turkey. Brisket ham alcatra pig tenderloin tongue tri-tip venison. Picanha shankle strip steak spare ribs turkey meatloaf pork, cupim swine.
 		</p>
@@ -39,5 +40,3 @@
 	</div>
 	</body>
 </html>
-
-	
