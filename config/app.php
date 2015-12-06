@@ -146,6 +146,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'Illuminate\Html\HtmlServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
 
     ],
 
@@ -195,8 +196,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Purifier' => 'Mews\Purifier\Facades\Purifier',
-        'Form'=> 'Illuminate\Html\FormFacade', 
-        'Html'=> 'Illuminate\Html\HtmlFacade'
+        'Form'=> 'Illuminate\Html\FormFacade',
+        'Html'=> 'Illuminate\Html\HtmlFacade',
+        'Image' => 'Intervention\Image\Facades\Image',
 
     ],
 
