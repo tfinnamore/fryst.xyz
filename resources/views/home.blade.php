@@ -7,7 +7,7 @@
 
 	<body class="text-center">
 		<h1>Welcome to my Awesome website!!</h1>
-		<h3>wewt!</h3>
+		<h3>subtitle!</h3>
 		<p />
 
 		<div class="container">
