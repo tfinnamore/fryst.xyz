@@ -15,14 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('test', function () {
-	Mail::raw('email test', function($message){
-		$message->from('tfinnamore@fryst.xyz', 'Tim');
-		$message->to('tfinnamore@gmail.com');
-		$message->subject('welcome!');
-	});
-});
-
 Route::get('download/{token}', [
   'as' => 'download',
   'middleware' => 'auth',
