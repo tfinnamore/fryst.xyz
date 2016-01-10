@@ -32,28 +32,29 @@ Route::group(['prefix' => 'upload'], function(){
 
 });
 
-Route::group(['prefix' => 'todo'], function(){
+Route::group(['prefix' => 'todo', 'middleware' => 'auth'], function(){
 
 	Route::get('/', function(){
-				return "wewt";
-	});
-
-
-
+    return "Todo list goes here";
+  });
 
 });
 
-Route::group(['prefix' => 'shop'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
-	Route::get('/', function(){
-		return "wewt";
-	});
-
-
-
-
+  Route::get('/', function(){
+    return "Admin stuff goes here";
+  });
 
 });
+
+//Route::group(['prefix' => 'shop'], function(){
+//
+	// Route::get('/', function(){
+	// 	return "wewt";
+	// });
+
+
 
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
