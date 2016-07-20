@@ -36,6 +36,7 @@ class ToDoController extends Controller
     public function create()
     {
         //
+        return view('todo.create');
     }
 
     /**
@@ -47,6 +48,8 @@ class ToDoController extends Controller
     public function store(Request $request)
     {
         //
+
+        dd($request);
     }
 
     /**
