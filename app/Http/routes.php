@@ -41,6 +41,8 @@ Route::group(['prefix' => 'todo', 'middleware' => 'auth'], function(){
   Route::get('/', ['uses' => 'ToDoController@index', 'as' => 'todo.index']);
   Route::get('/add', ['uses' => 'ToDoController@create', 'as' => 'todo.add']);
   Route::post('/store', ['uses' => 'ToDoController@store', 'as' => 'todo.store']);
+  Route::get('/{id}/edit', ['uses' => 'ToDoController@edit', 'as' => 'todo.edit']);
+  Route::post('/{id}/update', ['uses' => 'ToDoController@update', 'as' => 'todo.update']);
 
 });
 

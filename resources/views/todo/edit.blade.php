@@ -1,4 +1,4 @@
-{!! Form::open([ 'route' => 'todo.store']) !!}
+{!! Form::model($todo, [ 'route' => ['todo.update', $todo->id] ]) !!}
   <p>
 				{!! Form::label('title', 'Title: ') !!}
 				{!! Form::text('title', Request::old('title'), ['class' => 'form-control']) !!}
@@ -20,11 +20,11 @@
         {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay() ) !!}
       </p>
         {!! Form::label('Urgency', 'Urgency: ') !!}
-        {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('Urgency','Medium')) !!}
+        {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('urgency')) !!}
       <p>
 				{!! Form::hidden('user_id', Auth::user()->id) !!}
 
-				{!! Form::submit('Add To-Do', ['class' => 'btn btn-default']) !!}
+				{!! Form::submit('Save Changes', ['class' => 'btn btn-default']) !!}
       </p>
 
 {!! Form::close() !!}

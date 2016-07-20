@@ -45,11 +45,12 @@ class ToDoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, \App\Todo $todo)
     {
         //
+      $todo->create( $request->all() );
+      return redirect()->route('todo.index');
 
-        dd($request);
     }
 
     /**
@@ -69,9 +70,11 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, \App\Todo $todo)
     {
         //
+        $editTodo = $todo->findOrFail($id);
+        return view('todo.edit')->with('todo', $editTodo);
     }
 
     /**
@@ -81,9 +84,14 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, \App\Todo $todo)
     {
         //
+        $updateTodo = $todo->findOrFail($id);
+        $updateTodo->fill($request->all());
+        $updateTodo->save();
+        return redirect()->route('todo.index');
+
     }
 
     /**

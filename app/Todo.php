@@ -16,6 +16,7 @@ class Todo extends Model
         'ReminderDate',
         'DueDate',
         'Urgency',
+        'user_id'
 
       ];
 
