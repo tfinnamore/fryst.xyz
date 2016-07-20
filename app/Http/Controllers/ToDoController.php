@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -45,7 +44,7 @@ class ToDoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, \App\Todo $todo)
+    public function store(Requests\StoreTodoRequest $request, \App\Todo $todo)
     {
         //
       $todo->create( $request->all() );
@@ -84,7 +83,7 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, \App\Todo $todo)
+    public function update(StoreTodoRequest $request, $id, \App\Todo $todo)
     {
         //
         $updateTodo = $todo->findOrFail($id);

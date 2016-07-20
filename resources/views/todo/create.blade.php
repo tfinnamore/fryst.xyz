@@ -1,3 +1,14 @@
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
 {!! Form::open([ 'route' => 'todo.store']) !!}
   <p>
 				{!! Form::label('title', 'Title: ') !!}
@@ -20,7 +31,7 @@
         {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay() ) !!}
       </p>
         {!! Form::label('Urgency', 'Urgency: ') !!}
-        {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('Urgency','Medium')) !!}
+        {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('Urgency','Medium') ) !!}
       <p>
 				{!! Form::hidden('user_id', Auth::user()->id) !!}
 
