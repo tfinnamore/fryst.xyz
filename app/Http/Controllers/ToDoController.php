@@ -100,8 +100,10 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, \App\Todo $todo)
     {
         //
+        $todo->find($id)->delete();
+        return redirect()->route('todo.index');
     }
 }
