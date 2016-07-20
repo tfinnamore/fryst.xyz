@@ -34,9 +34,11 @@ Route::group(['prefix' => 'upload'], function(){
 
 Route::group(['prefix' => 'todo', 'middleware' => 'auth'], function(){
 
-	Route::get('/', function(){
-    return "Todo list goes here";
-  });
+	// Route::get('/', function(){
+  //   return "Todo list goes here";
+  // });
+
+  Route::get('/', ['uses' => 'ToDoController@index', 'as' => 'todo.index']);
 
 });
 

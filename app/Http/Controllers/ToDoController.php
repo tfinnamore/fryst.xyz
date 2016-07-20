@@ -19,9 +19,13 @@ class ToDoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(\App\Todo $todo)
     {
-        //
+        //return a view that shows all todos
+        $todos = $todo->all();
+
+        // dd($todos);
+        return view('todo.index')->with('todos' , $todos);
     }
 
     /**
