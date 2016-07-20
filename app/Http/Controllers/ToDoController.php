@@ -83,7 +83,7 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreTodoRequest $request, $id, \App\Todo $todo)
+    public function update(Requests\StoreTodoRequest $request, $id, \App\Todo $todo)
     {
         //
         $updateTodo = $todo->findOrFail($id);
