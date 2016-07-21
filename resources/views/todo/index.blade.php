@@ -1,5 +1,13 @@
 @extends('welcome')
 
+@section('menubar')
+
+  <a href="{{ route('todo.create') }}">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+
+@endsection
+
 @section('content')
 
 @foreach($todos as $todo)
