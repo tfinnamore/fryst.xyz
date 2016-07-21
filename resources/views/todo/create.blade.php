@@ -36,7 +36,7 @@
     {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control'] ) !!}
   </p>
     {!! Form::label('Urgency', 'Urgency: ') !!}
-    {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('urgency'), ['class' => 'form-control']) !!}
+    {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('urgency', 'medium'), ['class' => 'form-control']) !!}
   <p class="form-group">
     {!! Form::hidden('user_id', Auth::user()->id) !!}
 
