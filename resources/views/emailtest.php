@@ -1,6 +1,0 @@
-<?php
-
-{{ $from }}
-
-{{ $subject }}
-

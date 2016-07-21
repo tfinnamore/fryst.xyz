@@ -34,10 +34,6 @@ Route::group(['prefix' => 'upload'], function(){
 
 Route::group(['prefix' => 'todo', 'middleware' => 'auth'], function(){
 
-	// Route::get('/', function(){
-  //   return "Todo list goes here";
-  // });
-
   Route::get('/', ['uses' => 'ToDoController@index', 'as' => 'todo.index']);
   Route::get('/create', ['uses' => 'ToDoController@create', 'as' => 'todo.add']);
   Route::post('/store', ['uses' => 'ToDoController@store', 'as' => 'todo.store']);
@@ -55,15 +51,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
   });
 
 });
-
-//Route::group(['prefix' => 'shop'], function(){
-//
-	// Route::get('/', function(){
-	// 	return "wewt";
-	// });
-
-
-
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
