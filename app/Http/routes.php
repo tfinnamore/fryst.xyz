@@ -44,6 +44,7 @@ Route::group(['prefix' => 'todo', 'middleware' => 'auth'], function(){
   Route::get('/{id}/edit', ['uses' => 'ToDoController@edit', 'as' => 'todo.edit']);
   Route::post('/{id}/update', ['uses' => 'ToDoController@update', 'as' => 'todo.update']);
   Route::get('/{id}/delete', ['uses' => 'ToDoController@destroy', 'as' => 'todo.destroy']);
+  Route::get('/{id}', ['uses' => 'ToDoController@show', 'as' => 'todo.show']);
 
 });
 

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+Use App\Todo;
+use App\Http\Requests\StoreTodoRequest;
 use App\Http\Controllers\Controller;
 
 class ToDoController extends Controller
@@ -18,7 +19,7 @@ class ToDoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(\App\Todo $todo)
+    public function index(Todo $todo)
     {
         //return a view that shows all todos
         $todos = $todo->all();
@@ -44,7 +45,7 @@ class ToDoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\StoreTodoRequest $request, \App\Todo $todo)
+    public function store(StoreTodoRequest $request, Todo $todo)
     {
         //
       $todo->create( $request->all() );
@@ -58,9 +59,11 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Todo $todo)
     {
         //
+        $showTodo = $todo->findOrFail($id);
+        return view('todo.show')->with('todo', $showTodo);
     }
 
     /**
@@ -69,7 +72,7 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, \App\Todo $todo)
+    public function edit($id, Todo $todo)
     {
         //
         $editTodo = $todo->findOrFail($id);
@@ -83,7 +86,7 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\StoreTodoRequest $request, $id, \App\Todo $todo)
+    public function update(StoreTodoRequest $request, $id, Todo $todo)
     {
         //
         $updateTodo = $todo->findOrFail($id);
@@ -99,7 +102,7 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, \App\Todo $todo)
+    public function destroy($id, Todo $todo)
     {
         //
         $todo->find($id)->delete();
