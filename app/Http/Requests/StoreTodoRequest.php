@@ -23,8 +23,10 @@ class StoreTodoRequest extends Request
      */
     public function rules()
     {
+
+
         return [
-            'title' => 'required|unique:todo|max:255',
+            'title' => 'required|max:255|unique:todo,title,'.$this->route('id'),
             'Notes' => 'max:1024',
             'ReminderDate' => 'required_with:SendEmailReminder',
             'Urgency' => 'required',

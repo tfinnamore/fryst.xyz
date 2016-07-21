@@ -8,34 +8,35 @@
     </div>
 @endif
 
+<h1 class="text-center">Create a To-do</h1>
 
 {!! Form::open([ 'route' => 'todo.store']) !!}
-  <p>
-				{!! Form::label('title', 'Title: ') !!}
-				{!! Form::text('title', Request::old('title'), ['class' => 'form-control']) !!}
-      </p>
-      <p>
-				{!! Form::label('notes', 'Notes: ') !!}
-				{!! Form::textarea('Notes', Request::old('Notes'), ['class'=>'ckeditor']) !!}
-      </p>
-      <p>
-        {!! Form::label('SendEmailReminder', 'Send Reminder? ') !!}
-        {!! Form::checkbox('SendEmailReminder', 'SendEmailReminder') !!}
-      </p>
-      <p>
-        {!! Form::label("ReminderDate", 'Reminder Date: ') !!}
-        {!! Form::date('ReminderDate', \Carbon\Carbon::now()->addDay() ) !!}
-      </p>
-      <p>
-        {!! Form::label('DueDate', 'Due Date: ') !!}
-        {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay() ) !!}
-      </p>
-        {!! Form::label('Urgency', 'Urgency: ') !!}
-        {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('Urgency','Medium') ) !!}
-      <p>
-				{!! Form::hidden('user_id', Auth::user()->id) !!}
+  <p class="form-group">
+    {!! Form::label('title', 'Title: ') !!}
+    {!! Form::text('title', Request::old('title'), ['class' => 'form-control']) !!}
+  </p>
+  <p class="form-group">
+    {!! Form::label('notes', 'Notes: ') !!}
+    {!! Form::textarea('Notes', Request::old('Notes'), ['class'=>'ckeditor form-control']) !!}
+  </p>
+  <p class="form-group">
+    {!! Form::label('SendEmailReminder', 'Send Reminder? ') !!}
+    {!! Form::checkbox('SendEmailReminder', 'true', ['class' => 'form-control']) !!}
+  </p>
+  <p class="form-group">
+    {!! Form::label("ReminderDate", 'Reminder Date: ') !!}
+    {!! Form::date('ReminderDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control datepicker']) !!}
+  </p>
+  <p class="form-group">
+    {!! Form::label('DueDate', 'Due Date: ') !!}
+    {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control'] ) !!}
+  </p>
+    {!! Form::label('Urgency', 'Urgency: ') !!}
+    {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('urgency'), ['class' => 'form-control']) !!}
+  <p class="form-group">
+    {!! Form::hidden('user_id', Auth::user()->id) !!}
 
-				{!! Form::submit('Add To-Do', ['class' => 'btn btn-default']) !!}
-      </p>
+		{!! Form::submit('Add To-Do', ['class' => 'btn btn-default']) !!}
+  </p>
 
 {!! Form::close() !!}

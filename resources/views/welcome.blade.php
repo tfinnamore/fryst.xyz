@@ -3,7 +3,7 @@
     <head>
         <title>Fryst</title>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
 
     </head>
@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Fryst.xyz</div>
                 <div class="panel-body">
-                
+
                 @yield('content')
 
                 </div>
