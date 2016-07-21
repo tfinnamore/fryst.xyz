@@ -33,7 +33,7 @@
   </p>
   <p class="form-group">
     {!! Form::label('DueDate', 'Due Date: ') !!}
-    {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control'] ) !!}
+    {!! Form::date('DueDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control datepicker'] ) !!}
   </p>
     {!! Form::label('Urgency', 'Urgency: ') !!}
     {!! Form::select('Urgency', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], Request::old('urgency', 'Medium'), ['class' => 'form-control']) !!}
@@ -46,3 +46,19 @@
 {!! Form::close() !!}
 
 @stop
+
+@section('scripts')
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.min.js'></script>
+  <link rel=stylesheet href="https://code.jquery.com/ui/1.12.0/themes/vader/jquery-ui.css" />
+
+  <script>
+
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      dateFormat: "yy-mm-dd"
+    });
+  });
+
+  </script>

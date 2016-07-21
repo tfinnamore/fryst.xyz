@@ -24,6 +24,7 @@
         Email Reminder date: {{ $todo->ReminderDate }}
       </p>
     </div>
+  </div>
   @endforeach
 
 @stop

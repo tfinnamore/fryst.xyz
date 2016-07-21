@@ -47,3 +47,21 @@
 
 
 @stop
+
+@section('scripts')
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.min.js'></script>
+  <link rel=stylesheet href="https://code.jquery.com/ui/1.12.0/themes/vader/jquery-ui.css" />
+
+  <script>
+
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      dateFormat: "yy-mm-dd"
+    });
+  });
+
+  </script>
+
+@stop
