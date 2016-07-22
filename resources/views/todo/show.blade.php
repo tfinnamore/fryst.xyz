@@ -7,6 +7,9 @@
       <div class="panel-heading">
         <span>{{ $todo->title }}</span>
         <div class="pull-right">
+          <a href="#">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+          </a>
           <a href="{{ route('todo.edit',['id' => $todo->id]) }}">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
           </a>
