@@ -108,4 +108,11 @@ class ToDoController extends Controller
         $todo->find($id)->delete();
         return redirect()->route('todo.index');
     }
+    public function complete($id, Todo $todo)
+    {
+      $complete = $todo->find($id);
+      $complete->status = 'Complete';
+      $complete->save();
+      return \Response::json('success', 200);
+    }
 }

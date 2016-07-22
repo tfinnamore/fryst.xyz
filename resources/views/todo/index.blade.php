@@ -15,7 +15,7 @@
     <div class="panel-heading">
       <a href="{{ route('todo.show', ['id' => $todo->id]) }}">{{ $todo->title }}</a>
       <div class="pull-right">
-        <a href="#">
+        <a href="#" class="complete">
           <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
         </a>
         <a href="{{ route('todo.edit',['id' => $todo->id]) }}">
@@ -27,9 +27,9 @@
       </div>
     </div>
     <div class="panel-body">
-      <p>Due Date: {{ $todo->DueDate }}</p>
+      <p>Due Date: {{ $todo->DueDate or 'No Due Date set' }}</p>
       <p>Urgency: {{ $todo->Urgency }}</p>
-      <p>Email Reminder date: {{ $todo->ReminderDate }}</p>
+      <p>Email Reminder date: {{ $todo->ReminderDate or 'No Reminder set' }}</p>
     </div>
   </div>
   @endforeach
@@ -46,6 +46,15 @@ $("a.remove").on('click', function(e){
   if (result) {
     window.location = "{{ route('todo.destroy',['id' => $todo->id]) }}";
   }
+});
+$("a.complete").on('click', function(e){
+  e.preventDefault();
+  $.ajax({
+    url: "{{ route('todo.complete', ['id' => $todo->id]) }}",
+    type: "post",
+    success: function(){alert('success');}
+  });
+
 });
 
 </script>
