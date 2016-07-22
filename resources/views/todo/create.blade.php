@@ -24,10 +24,6 @@
     {!! Form::textarea('Notes', Request::old('Notes'), ['class'=>'ckeditor form-control']) !!}
   </p>
   <p class="form-group">
-    {!! Form::label('SendEmailReminder', 'Send Reminder? ') !!}
-    {!! Form::checkbox('SendEmailReminder', 'true', ['class' => 'form-control']) !!}
-  </p>
-  <p class="form-group">
     {!! Form::label("ReminderDate", 'Reminder Date: ') !!}
     {!! Form::date('ReminderDate', \Carbon\Carbon::now()->addDay(), ['class' => 'form-control datepicker']) !!}
   </p>

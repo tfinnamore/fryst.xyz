@@ -17,7 +17,8 @@
       </div>
       <div class="panel-body">
         <p>Notes: {{ $todo->Notes }}</p>
-        <p>Due Date: {{ $todo->DueDate }}</p>
+        <p>Due Date: {{ $todo->DueDate or 'No Due Date set'}}</p>
+        <p>Reminder: {{ $todo->ReminderDate or 'No Reminder set'}}</p>
         <p>Urgency: {{ $todo->Urgency }}</p>
       </div>
 

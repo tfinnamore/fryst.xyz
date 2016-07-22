@@ -27,7 +27,6 @@
       <p>Notes: {{ $todo->Notes }}</p>
       <p>Due Date: {{ $todo->DueDate }}</p>
       <p>Urgency: {{ $todo->Urgency }}</p>
-      <p>Email  Reminder: {{ $todo->SendEmailReminder }}</p>
       <p>
         Email Reminder date: {{ $todo->ReminderDate }}
       </p>
